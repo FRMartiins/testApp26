@@ -1,5 +1,6 @@
 import {Pressable, Text, StyleSheet} from "react-native";
-import {useState} from "react"
+import {useState, useEffect} from "react"
+
 
 interface ButtonProps {
     text: string
@@ -9,6 +10,7 @@ interface ButtonProps {
 export function Button(props: ButtonProps){
 
     const [count,setCount] = useState<number>(0)
+    useEffect(() => {console.log("changed")}, [count])
 
     return(
         <Pressable 
